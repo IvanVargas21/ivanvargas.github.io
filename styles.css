@@ -1,0 +1,199 @@
+:root {
+    --primary-bg-color: #16161a;
+    --secondary-bg-color: #242629;
+    --pgrph-color: #94a1b2;
+    --btn-txt: #fffffe;
+    --btn-color: #7f5af0;
+    --headline: #fffffe;
+    --sub-headline: #94a1b2;
+    --card-heading: #fffffe;
+    --card-prgrph: #94a1b2;
+    --card-bg: #16161a;
+    --stroke: #010101;
+    --highlight: #7f5af0;
+    --tertiary: #2cb67d;
+    --main: #fffffe; 
+    --secondary: #72757e;
+}
+* {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+body{
+   background-color: var(--bg-color);
+   font-family: "Noto Serif", sans-serif;
+   text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+}
+h1 {
+    font-size: 60px;
+}
+#navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: var(--btn-color);
+    padding: 20px 0px;
+    font-size: 20px;
+    border-bottom: 1px solid var(--stroke);
+}
+.nav-links{
+    display: flex;
+    list-style: none;
+}
+.nav-links a{
+    text-decoration: none;
+    color: var(--main);
+    padding: 0 15px;
+}
+.nav-links a:hover{
+    text-decoration: underline;
+}
+section {
+    min-height: 100vh;
+    padding: 70px 0px;
+}
+#welcome-section{
+    background-color: var(--primary-bg-color);
+    color: var(--main);
+}
+#welcome-section h1{
+    margin-top: 30vh;
+}
+#welcome-section p {
+    margin-top: 25px;
+    color: var(--highlight);
+    font-size: 25px;
+    font-style: italic;
+}
+#projects {
+    background-color: var(--secondary-bg-color);
+}
+#projects h1 {
+    color: var(--headline);
+    border-bottom: 5px solid var(--headline) ;
+    /* means that the box will use the available space, but never more than max-content.*/
+    width: fit-content;
+    margin: auto;
+}
+#projects .projects{
+    display: grid;
+    /*New to me, has to learn!!*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 30px;
+    padding: 20px;
+    place-items: center;
+    min-width: 1200px;
+    margin: auto;
+}
+#projects .project-tile{
+    height: 525px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-bg);
+    text-decoration: none;
+    color: var(--card-heading);
+    border-radius: 5px;
+    box-shadow: 8px 8px 10px 5px rgba(100, 100, 100, 0.3);
+}
+#projects .project-tile img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#projects .project-tile p {
+    font-size: 25px;
+    padding: 10px;
+    
+}
+#projects .project-tile p {
+    font-size: 25px;
+    padding: 10px;
+    
+}
+#projects .project-tile span{
+    opacity: 0%;
+    padding: 0 5px;
+}
+#projects .project-tile:hover span{
+    opacity: 100%;
+    transition: opacity 0.25s ease-in;
+    color: var(--tertiary);
+    font-weight:bolder; 
+}
+.show-all {
+    text-decoration:none ;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 0px 15px;
+    background-color: var(--btn-color);
+    color: var(--btn-txt);
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+}
+.show-all:hover{
+    background-color: var(--tertiary);
+}
+#contact {
+    background-color: var(--primary-bg-color);
+    color: var(--card-heading);
+}
+#contact h1 {
+    margin-top: 300px;
+}
+#contact p {
+    color: var(--headline);
+    font-size: 25px;
+    margin: 20px 0px;
+    font-style: italic;
+}
+#contact .social-medias {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 30px;
+}
+#contact .social-media {
+    text-decoration: none;
+    color: var(--btn-txt);
+    transition: transform 0.2s ease-in;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    font-size: 20px;
+}
+#contact .social-media:hover{
+    transform: translateY(10px);
+}
+footer{
+    border-top: 4px solid var(--tertiary);
+    background-color: var(--secondary-bg-color);
+    color: var(--headline);
+    font-size: 25px;
+    padding: 30px;
+}
+@media only screen and (width < 700px) {
+    h1 {
+        font-size: 50px;
+    }
+    #projects .project-tile {
+        height: 600px;
+        width: 100%;
+
+    }
+}
